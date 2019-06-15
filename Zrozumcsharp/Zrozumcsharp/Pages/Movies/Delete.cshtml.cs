@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using Zrozumcsharp.Data;
 using Zrozumcsharp.Models;
 
 namespace Zrozumcsharp.Pages.Movies
 {
     public class DeleteModel : PageModel
     {
-        private readonly Zrozumcsharp.Models.ZrozumcsharpContext _context;
+        private readonly ZrozumcsharpContext _context;
 
-        public DeleteModel(Zrozumcsharp.Models.ZrozumcsharpContext context)
+        public DeleteModel(ZrozumcsharpContext context)
         {
             _context = context;
         }
