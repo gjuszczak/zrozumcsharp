@@ -28,11 +28,11 @@ namespace Zrozumcsharp
         public void ConfigureServices(IServiceCollection services)
         {
             // configure cookie policy
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
+            //services.Configure<CookiePolicyOptions>(options =>
+            //{
+            //    options.CheckConsentNeeded = context => true;
+            //    options.MinimumSameSitePolicy = SameSiteMode.None;
+            //});
 
             // configure MVC
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -101,7 +101,7 @@ namespace Zrozumcsharp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();
-            app.UseCookiePolicy();
+            //app.UseCookiePolicy();
 
             // Configure default culture
             var defaultCulture = new CultureInfo("en-US");
