@@ -11,13 +11,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Zrozumcsharp.Pages.Account.Manage
 {
-    public partial class IndexModel : PageModel
+    public partial class UpdateProfileModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IEmailSender _emailSender;
 
-        public IndexModel(
+        public UpdateProfileModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             IEmailSender emailSender)

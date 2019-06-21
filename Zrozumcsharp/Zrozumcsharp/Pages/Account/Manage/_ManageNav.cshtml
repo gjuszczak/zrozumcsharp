@@ -1,6 +1,9 @@
-﻿<h6 style="margin-top:1rem;">Account</h6>
+﻿<h6 style="margin-top:1rem;">Manage</h6>
 <div class="collection">
-    <a class="collection-item @ManageNavPages.IndexNavClass(ViewContext)" asp-page="./Index">Profile</a>
-    <a class="collection-item @ManageNavPages.ChangePasswordNavClass(ViewContext)" asp-page="./ChangePassword">Password</a>
-    <a class="collection-item @ManageNavPages.PersonalDataNavClass(ViewContext)" asp-page="./PersonalData">Personal data</a>
+    <a class="collection-item @ManageNavPages.UpdateProfileNavClass(ViewContext)" 
+       asp-page="../Manage/UpdateProfile">Update profile</a>
+    <a class="collection-item @ManageNavPages.ChangePasswordNavClass(ViewContext)" 
+       asp-page="../Manage/ChangePassword">Change password</a>
+    <a class="collection-item @ManageNavPages.PersonalDataNavClass(ViewContext)" 
+       asp-page="../Manage/PersonalData">Personal data</a>
 </div>

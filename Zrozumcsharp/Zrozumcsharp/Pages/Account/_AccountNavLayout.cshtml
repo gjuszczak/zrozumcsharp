@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "/Pages/Shared/_Layout.cshtml";
+}
+
+<div>
+    <div class="row">
+        <div class="col m3 s12">
+            <partial name="../Manage/_ManageNav" />
+            <partial name="../Admin/_AdminNav" />
+        </div>
+        <div class="col m9 s12">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}
