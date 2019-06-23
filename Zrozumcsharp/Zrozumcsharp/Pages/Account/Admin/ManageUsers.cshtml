@@ -5,31 +5,45 @@
     ViewData["ActivePage"] = AdminNavPages.ManageUsers;
 }
 
-<partial name="_StatusMessage" for="StatusMessage" />
 <div class="row">
     <h5>@ViewData["Title"]</h5>
     <hr />
-    <div class="col m8 s12">
-        <form id="profile-form" method="post">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <label asp-for="Username"></label>
-            <input asp-for="Username" disabled />
-            <label asp-for="Input.Email"></label>
-            <input asp-for="Input.Email" />
-            <span asp-validation-for="Input.Email" class="text-danger"></span>
-            @if (!Model.IsEmailConfirmed)
+    <table class="responsive-table striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AllUsers[0].Email)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.AllUsers)
             {
-                <p>
-                    <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn waves-effect waves-light">Send verification email</button>
-                </p>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        <ul id="@item.Id" class="dropdown-content">
+                            <li><a asp-page="./DeleteUser" asp-route-id="@item.Id">Delete</a></li>
+                        </ul>
+                        <a class="dropdown-trigger" href="#!" data-target="@item.Id"><i class="material-icons right">more_vert</i></a>
+                        @*
+                            <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        *@
+                    </td>
+                </tr>
             }
-            <p>
-                <button id="update-profile-button" type="submit" class="btn waves-effect waves-light">Save</button>
-            </p>
-        </form>
-    </div>
+        </tbody>
+    </table>
 </div>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        $('.dropdown-trigger').dropdown();
+    </script>
 }

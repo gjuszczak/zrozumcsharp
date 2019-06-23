@@ -1,0 +1,40 @@
+﻿@page
+@model DeleteUserModel
+@{
+    ViewData["Title"] = "Delete User";
+    ViewData["ActivePage"] = AdminNavPages.ManageUsers;
+}
+
+<div class="row">
+    <h5><i class="small material-icons">warning</i> @ViewData["Title"]</h5>
+    <hr />
+    <strong>Operation will permanently remove selected user account, and this cannot be recovered.</strong>
+</div>
+
+<dl class="row">
+    <dt class="col s2">
+        @Html.DisplayNameFor(model => model.SelectedUser.Id)
+    </dt>
+    <dd class="col s10">
+        @Html.DisplayFor(model => model.SelectedUser.Id)
+    </dd>
+    <dt class="col s2">
+        @Html.DisplayNameFor(model => model.SelectedUser.Email)
+    </dt>
+    <dd class="col s10">
+        @Html.DisplayFor(model => model.SelectedUser.Email)
+    </dd>
+</dl>
+
+<div class="row">
+    <div class="col m8 sm12">
+        <form method="post">
+            <input type="hidden" asp-for="SelectedUser.Id" />
+            <button type="submit" class="btn waves-effect waves-light">Delete data and close selected user account</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}
