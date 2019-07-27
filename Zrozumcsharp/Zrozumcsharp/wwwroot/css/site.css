@@ -47,16 +47,44 @@ nav {
         background-color: #727fe1;
     }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-    font-size: 14px;
+.card .card-content p {
+    height: 80px;
+    text-overflow: ellipsis;
 }
 
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
+.card .card-action {
+    text-align: right;
+}
+
+    .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+        margin-right: 0px;
+        margin-left: 20px;
+        color: blue;
     }
+
+        .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
+            color: dodgerblue;
+        }
+
+
+html {
+    font-size: 14px;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
+    padding: 10px;
 }
 
 .border-top {
@@ -76,24 +104,3 @@ button.accept-policy {
     line-height: inherit;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-}
-
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    white-space: nowrap;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    line-height: 60px; /* Vertically center the text there */
-}

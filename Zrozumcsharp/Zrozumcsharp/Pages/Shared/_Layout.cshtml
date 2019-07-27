@@ -22,17 +22,18 @@
     <header>
         <nav>
             <div class="nav-wrapper container">
-                <a class="brand-logo" asp-page="/Index">Zrozum C#</a>                
+                <a class="brand-logo" asp-page="/Index">Zrozum C#</a>
 
                 <partial name="_LoginPartial" />
 
                 <ul class="right hide-on-med-and-down">
+                    <li><a asp-page="/Courses/Index">Courses</a></li>
                     <li><a asp-page="/Privacy">Privacy</a></li>
                 </ul>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="content container">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
@@ -40,9 +41,7 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - Zrozumcsharp - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
+        <div class="container">&copy; 2019 - Zrozumcsharp - <a asp-area="" asp-page="/Privacy">Privacy</a></div>
     </footer>
 
     <environment include="Development">
