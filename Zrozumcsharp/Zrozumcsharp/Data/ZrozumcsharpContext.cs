@@ -13,5 +13,6 @@ namespace Zrozumcsharp.Data
         }
 
         public DbSet<Movie> Movie { get; set; }
+        public DbSet<Course> Course { get; set; }
     }
 }

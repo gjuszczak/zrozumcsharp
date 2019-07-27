@@ -1,7 +1,7 @@
 ﻿@page
-@model Pages.Courses.IndexModel
+@model Zrozumcsharp.Pages.Courses.IndexModel
 @{
-    ViewData["Title"] = "C# Courses";
+    ViewData["Title"] = "Courses";
 }
 
 <div class="text-center">
@@ -47,7 +47,7 @@
                 </div>
                 <div class="card-content">
                     <p>
-                        This course gives you the most advanced C# knowledge. 
+                        This course gives you the most advanced C# knowledge.
                         After this course you will be a C# expert.
                     </p>
                 </div>
@@ -56,5 +56,24 @@
                 </div>
             </div>
         </div>
+
+        @foreach (var item in Model.Course)
+        {
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/img/@item.Image">
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            @item.ShortDescription
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <a href="@item.UrlSlug">Read more</a>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 </div>
