@@ -41,6 +41,9 @@ namespace Zrozumcsharp
             services.AddDbContext<ZrozumcsharpContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ZrozumcsharpContext")));
 
+            // configure first run setup service
+            services.AddSingleton<IFirstRunSetup, FirstRunSetup>();
+
             // configure identity
             services.AddSingleton<IEmailSender, EmailSender>();
 
@@ -113,6 +116,7 @@ namespace Zrozumcsharp
             };
             app.UseRequestLocalization(localizationOptions);
 
+            app.UseFirstRunSetupPage("/Setup");
             app.UseMvc();
         }
     }
